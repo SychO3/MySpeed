@@ -48,6 +48,15 @@ export const parseCloudflare = (test) => {
     return {ping: 0, jitter: null, download: 0, upload: 0, time: 0, resultId: null};
 };
 
+export const parseGuizhou = (test) => ({
+    ping: Math.round(test.ping),
+    jitter: null,
+    download: parseFloat(test.download.toFixed(2)),
+    upload: parseFloat(test.upload.toFixed(2)),
+    time: test.time || Math.round((test.elapsed || 0) / 1000),
+    resultId: null
+});
+
 export const parseData = (provider, data) => {
     switch (provider) {
         case "ookla":
@@ -56,6 +65,8 @@ export const parseData = (provider, data) => {
             return parseLibre(data);
         case "cloudflare":
             return parseCloudflare(data);
+        case "guizhou":
+            return parseGuizhou(data);
         default:
             throw {message: "Invalid provider"};
     }

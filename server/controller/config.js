@@ -26,6 +26,7 @@ const configDefaults = {
     ooklaId: "none",
     libreId: "none",
     libreUrl: "none",
+    guizhouUrl: "http://220.197.44.106:8082",
     password: "none",
     passwordLevel: "none",
     interface: "none"
@@ -95,7 +96,7 @@ export const validateInput = async (key, value) => {
     if ((key === "ooklaId" || key === "libreId") && (/[^0-9]/.test(value) && value !== "none"))
         return "You need to provide a number in order to change this";
 
-    if (key === "libreUrl" && value !== "none") {
+    if ((key === "libreUrl" || key === "guizhouUrl") && value !== "none") {
         try {
             new URL(value);
         } catch (e) {
@@ -106,7 +107,7 @@ export const validateInput = async (key, value) => {
     if (key === "passwordLevel" && !["none", "read"].includes(value))
         return "You need to provide either none or read-access";
 
-    if (key === "provider" && !["ookla", "libre", "cloudflare"].includes(value))
+    if (key === "provider" && !["ookla", "libre", "cloudflare", "guizhou"].includes(value))
         return "You need to provide a valid provider";
 
     if (key === "ping")

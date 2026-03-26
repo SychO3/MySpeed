@@ -42,8 +42,10 @@ export const run = async (retryAuto = false) => {
         throw {message: "No provider selected"};
     }
 
-    let serverId = mode === "cloudflare" ? 0 : await config.getValue(mode + "Id");
-    let serverUrl = mode === "libre" ? await config.getValue("libreUrl") : undefined;
+    let serverId = (mode === "cloudflare" || mode === "guizhou") ? 0 : await config.getValue(mode + "Id");
+    let serverUrl = mode === "libre" ? await config.getValue("libreUrl")
+        : mode === "guizhou" ? await config.getValue("guizhouUrl")
+        : undefined;
 
     if (serverId === "none")
         serverId = undefined;

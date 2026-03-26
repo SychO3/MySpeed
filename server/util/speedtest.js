@@ -5,6 +5,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export default async (mode, serverId, serverUrl) => {
+    if (mode === "guizhou") {
+        const { runGuizhouSpeedtest } = await import('./providers/guizhouSpeedtest.js');
+        const startTime = new Date().getTime();
+        const result = await runGuizhouSpeedtest(serverUrl || "http://220.197.44.106:8082");
+        return { ...result, elapsed: new Date().getTime() - startTime };
+    }
+
     const binaryPath = mode === "ookla" ? './bin/speedtest' + (process.platform === "win32" ? ".exe" : "")
         : mode === "libre" ? './bin/librespeed-cli' + (process.platform === "win32" ? ".exe" : "")
             : './bin/cfspeedtest' + (process.platform === "win32" ? ".exe" : "");

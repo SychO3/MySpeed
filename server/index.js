@@ -82,7 +82,9 @@ const run = async () => {
     await requestInterfaces();
     setInterval(() => requestInterfaces(), 3600000);
 
-    if (process.env.PREVIEW_MODE !== "true") await loadCli();
+    if (process.env.PREVIEW_MODE !== "true") {
+        try { await loadCli(); } catch (e) { console.warn("CLI loading failed (non-fatal):", e.message); }
+    }
 
     await config.insertDefaults();
 

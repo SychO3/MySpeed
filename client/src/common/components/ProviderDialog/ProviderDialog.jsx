@@ -7,6 +7,7 @@ import React, {useContext, useEffect, useState} from "react";
 import OoklaImage from "./assets/img/ookla.webp";
 import LibreImage from "./assets/img/libre.webp";
 import CloudflareImage from "./assets/img/cloudflare.webp";
+import GuizhouImage from "./assets/img/guizhou.webp";
 import {jsonRequest, patchRequest} from "@/common/utils/RequestUtil";
 import {Trans} from "react-i18next";
 import {ConfigContext} from "@/common/contexts/Config";
@@ -15,7 +16,8 @@ import {ToastNotificationContext} from "@/common/contexts/ToastNotification";
 export const providers = [
     {id: "ookla", name: "Ookla", image: OoklaImage},
     {id: "libre", name: "LibreSpeed", image: LibreImage},
-    {id: "cloudflare", name: "Cloudflare", image: CloudflareImage}
+    {id: "cloudflare", name: "Cloudflare", image: CloudflareImage},
+    {id: "guizhou", name: "贵州联通", image: GuizhouImage}
 ];
 
 export const ProviderDialog = ({open, onClose}) => {
@@ -28,6 +30,7 @@ export const ProviderDialog = ({open, onClose}) => {
     const [libreServers, setLibreServers] = useState({});
     const [serverId, setServerId] = useState("none");
     const [libreUrl, setLibreUrl] = useState(config.libreUrl || "none");
+    const [guizhouUrl, setGuizhouUrl] = useState(config.guizhouUrl || "http://220.197.44.106:8082");
     const [acceptedOokla, setAcceptedOokla] = useState(config.provider === "ookla");
 
     useEffect(() => {
@@ -40,6 +43,7 @@ export const ProviderDialog = ({open, onClose}) => {
     useEffect(() => {
         if (config[provider + "Id"]) setServerId(config[provider + "Id"]);
         if (config.libreUrl) setLibreUrl(config.libreUrl);
+        if (config.guizhouUrl) setGuizhouUrl(config.guizhouUrl);
     }, [provider, config]);
 
     useEffect(() => {
@@ -62,11 +66,14 @@ export const ProviderDialog = ({open, onClose}) => {
 
     const update = async (close) => {
         await patchRequest("/config/provider", {value: provider});
-        if (serverId !== config[provider + "Id"] && provider !== "cloudflare") {
+        if (serverId !== config[provider + "Id"] && provider !== "cloudflare" && provider !== "guizhou") {
             await patchRequest("/config/" + provider + "Id", {value: serverId});
         }
         if (provider === "libre" && libreUrl !== config.libreUrl) {
             await patchRequest("/config/libreUrl", {value: libreUrl});
+        }
+        if (provider === "guizhou" && guizhouUrl !== config.guizhouUrl) {
+            await patchRequest("/config/guizhouUrl", {value: guizhouUrl});
         }
         if (currentInterface !== config.interface) {
             await patchRequest("/config/interface", {value: currentInterface});
@@ -110,7 +117,7 @@ export const ProviderDialog = ({open, onClose}) => {
                                     </select>
                                 </div>
 
-                                {provider !== "cloudflare" && !isUsingCustomUrl && (
+                                {provider !== "cloudflare" && provider !== "guizhou" && !isUsingCustomUrl && (
                                     <div className="provider-setting">
                                         <div className="provider-setting-label">
                                             <FontAwesomeIcon icon={faServer}/>
@@ -129,7 +136,7 @@ export const ProviderDialog = ({open, onClose}) => {
                                     </div>
                                 )}
 
-                                {provider !== "cloudflare" && serverId !== "none" && !isUsingCustomUrl && (
+                                {provider !== "cloudflare" && provider !== "guizhou" && serverId !== "none" && !isUsingCustomUrl && (
                                     <div className="provider-setting">
                                         <div className="provider-setting-label">
                                             <FontAwesomeIcon icon={faHashtag}/>
@@ -151,6 +158,19 @@ export const ProviderDialog = ({open, onClose}) => {
                                                placeholder={t("dialog.provider.custom_url_placeholder")}
                                                value={libreUrl === "none" ? "" : libreUrl}
                                                onChange={(e) => handleLibreUrlChange(e.target.value || "none")}/>
+                                    </div>
+                                )}
+
+                                {provider === "guizhou" && (
+                                    <div className="provider-setting">
+                                        <div className="provider-setting-label">
+                                            <FontAwesomeIcon icon={faLink}/>
+                                            <h3>{t("dialog.provider.guizhou_url")}</h3>
+                                        </div>
+                                        <input type="text" className="dialog-input provider-input"
+                                               placeholder="http://220.197.44.106:8082"
+                                               value={guizhouUrl === "none" ? "" : guizhouUrl}
+                                               onChange={(e) => setGuizhouUrl(e.target.value || "none")}/>
                                     </div>
                                 )}
                             </div>

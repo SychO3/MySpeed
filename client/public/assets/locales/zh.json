@@ -3,147 +3,191 @@
   "welcome": {
     "step": "步骤",
     "title": "欢迎使用 MySpeed！",
-    "subtext": "让我们一起完成首次设置。别担心，过程非常简单快捷。",
+    "subtext": "首次使用需要简单配置，很快就好。",
     "provider_title": "选择测速服务商",
-    "provider_subtext": "请选择您想要使用的测速服务商，系统将通过该服务商执行速度测试。",
-    "data_title": "设置基准数据",
-    "data_subtext": "请在此设置您宽带合同中约定的速度值",
-    "ms": "(毫秒)",
-    "mbps": "(单位：Mbps)",
-    "accept_title": "接受条款",
-    "accept_subtext": "在此步骤中，我们将介绍 Ookla 的许可协议。请仔细阅读并点击\"完成\"以确认您已阅读并接受该许可。"
+    "provider_subtext": "选择一个测速服务商，后续测速将通过它来进行。",
+    "data_title": "设置目标网速",
+    "data_subtext": "请输入您的宽带签约速率",
+    "ms": "（ms）",
+    "mbps": "（Mbps）",
+    "accept_title": "同意使用条款",
+    "accept_subtext": "请阅读 Ookla 的许可协议，点击「完成」即表示您已阅读并同意。"
   },
   "dialog": {
     "okay": "确定",
     "done": "完成",
-    "continue": "继续",
-    "apply": "应用",
+    "continue": "下一步",
+    "apply": "确认",
     "update": "更新",
     "close": "关闭",
     "unset": "移除",
     "retry": "重试",
     "login": "登录",
+    "save": "保存",
+    "saving": "保存中…",
     "password": {
-      "title": "需要密码",
-      "placeholder": "请输入密码",
-      "wrong": "密码输入错误",
+      "title": "请输入密码",
+      "placeholder": "输入密码",
+      "wrong": "密码错误",
       "unlock": "解锁"
     },
     "api": {
-      "title": "无法访问API",
-      "description": "MySpeed无法连接到该实例的API，请稍后重试。"
+      "title": "API 连接失败",
+      "description": "无法连接到当前实例的 API 服务，请稍后重试。"
     },
     "provider": {
-      "interface": "接口",
+      "interface": "网络接口",
       "server": "服务器",
-      "server_id": "服务器ID",
+      "server_id": "服务器 ID",
+      "custom_url": "自定义地址",
+      "custom_url_placeholder": "https://speed.test/backend/",
       "choose_automatically": "自动选择",
-      "ookla_license": "我已阅读并接受 Ookla 的<Eula>最终用户许可协议</Eula>、<GDPR>隐私政策</GDPR>和<TOS>服务条款</TOS>。"
+      "guizhou_url": "测速平台地址",
+      "ookla_license": "我已阅读并同意 Ookla 的<Eula>最终用户许可协议</Eula>、<GDPR>隐私政策</GDPR>和<TOS>服务条款</TOS>。",
+      "ookla_notice": "使用 Ookla 即表示您同意其<Eula>最终用户许可协议</Eula>、<GDPR>隐私政策</GDPR>和<TOS>服务条款</TOS>。",
+      "ookla_desc": "全球覆盖的主流测速平台",
+      "libre_desc": "开源可自建的测速工具",
+      "cloudflare_desc": "基于 CDN 的快速测速"
     }
   },
   "dropdown": {
     "settings": "设置",
-    "changes_applied": "设置已保存。",
-    "language_changed": "语言已切换。",
-    "provider_changed": "服务商已更改。",
-    "changes_unsaved": "修改未能保存，请检查输入内容。",
-    "invalid": "输入无效",
-    "ping": "最佳延迟",
-    "upload": "最佳上传速度",
-    "download": "最佳下载速度",
+    "changes_applied": "设置已保存",
+    "language_changed": "语言已切换",
+    "provider_changed": "服务商已切换",
+    "changes_unsaved": "保存失败，请检查输入内容",
+    "invalid": "输入有误",
+    "ping": "目标延迟",
+    "upload": "目标上传",
+    "download": "目标下载",
     "recommendations": "推荐值",
-    "change_provider": "更换服务商",
-    "password": "修改密码",
-    "cron": "设置测试频率",
-    "time": "设置显示时长",
-    "storage": "存储管理",
-    "pause_tests": "暂停测试",
-    "resume_tests": "恢复测试",
-    "language": "语言设置",
+    "optimal_values": "目标网速",
+    "change_provider": "切换服务商",
+    "password": "密码设置",
+    "cron": "测速频率",
+    "time": "显示范围",
+    "storage": "数据管理",
+    "pause_tests": "暂停测速",
+    "resume_tests": "恢复测速",
+    "language": "切换语言",
     "light_mode": "浅色模式",
     "dark_mode": "深色模式",
-    "theme_switched_light": "已切换到浅色模式",
-    "theme_switched_dark": "已切换到深色模式",
-    "info": "关于项目",
+    "theme_switched_light": "已切换为浅色模式",
+    "theme_switched_dark": "已切换为深色模式",
     "provider": "关于服务商",
-    "integrations": "外部集成"
+    "integrations": "通知集成"
+  },
+  "about": {
+    "title": "关于 MySpeed",
+    "description": "MySpeed 是一款开源的网速监测工具，可持续记录和分析最近 30 天的网络速度。",
+    "github": "GitHub",
+    "website": "官网",
+    "donate": "赞助",
+    "translate": "参与翻译",
+    "made_by": "用心打造"
   },
   "options": {
     "cron": {
-      "continuous": "连续 (每分钟)",
-      "frequent": "频繁 (每30分钟一次)",
-      "default": "标准 (每小时一次)",
-      "rare": "较少 (每3小时一次)",
-      "really_rare": "很少 (每6小时一次)"
+      "continuous": "持续",
+      "continuous_desc": "每分钟一次（资源占用较高）",
+      "frequent": "频繁",
+      "frequent_desc": "每 30 分钟一次",
+      "default": "默认",
+      "default_desc": "每小时一次（推荐）",
+      "rare": "偶尔",
+      "rare_desc": "每 3 小时一次",
+      "really_rare": "极少",
+      "really_rare_desc": "每 6 小时一次"
     },
     "level": {
       "no_access": "禁止访问",
       "read_access": "只读访问"
     }
   },
+  "password": {
+    "no_access_desc": "访客必须输入密码才能查看任何内容",
+    "read_access_desc": "访客可以查看数据，但无法修改设置"
+  },
+  "pause": {
+    "manual": "无限期暂停",
+    "manual_desc": "手动恢复前一直暂停",
+    "short": "短时暂停",
+    "short_desc": "暂停 1 小时",
+    "medium": "中等暂停",
+    "medium_desc": "暂停 6 小时",
+    "long": "长时间暂停",
+    "long_desc": "暂停 12 小时",
+    "custom": "自定义时长"
+  },
   "page": {
     "overview": "概览",
     "statistics": "统计"
   },
   "update": {
-    "ping_title": "设置最佳延迟 (ms)",
-    "ping_placeholder": "延迟 (ms)",
-    "upload_title": "设置最佳上传速度 (Mbps)",
-    "upload_placeholder": "上传速度 (Mbps)",
-    "download_title": "设置最佳下载速度 (Mbps)",
-    "download_placeholder": "下载速度 (Mbps)",
+    "ping_title": "设置目标延迟（ms）",
+    "ping_placeholder": "延迟（ms）",
+    "upload_title": "设置目标上传速度（Mbps）",
+    "upload_placeholder": "上传速度（Mbps）",
+    "download_title": "设置目标下载速度（Mbps）",
+    "download_placeholder": "下载速度（Mbps）",
     "recommendations_title": "智能推荐",
-    "recommendations_set": "使用自动推荐？",
-    "provider_title": "测速服务商设置",
+    "recommendations_set": "是否采用自动推荐值？",
+    "provider_title": "设置测速服务商",
     "manually": "手动设置",
     "new_password": "设置新密码",
     "password_placeholder": "新密码",
-    "password_removed": "密码保护已取消，之前设置的密码已删除。",
-    "level": "修改访问权限",
+    "password_removed": "已取消密码保护，密码已清除。",
+    "level": "权限设置",
     "level_title": "访客权限",
-    "cron_title": "测试频率设置",
-    "cron_rules": "定时规则",
-    "cron_next_test": "下次测试时间：",
-    "time_title": "显示最近测试...",
+    "cron_title": "设置测速频率",
+    "cron_rules": "Cron 表达式",
+    "cron_next_test": "下次测速：",
+    "custom_cron": "自定义 Cron 表达式",
+    "schedule_offset": "随机偏移",
+    "schedule_offset_desc": "添加随机延迟，避免测速在整点准时触发",
+    "advanced": "高级选项",
+    "time_title": "显示最近……的测速",
     "download": "下载",
-    "pause_title": "测试已暂停，原因...",
+    "pause_title": "暂停测速…",
     "hours": "小时",
     "pause": "暂停",
+    "pause_manual_hint": "留空则无限期暂停",
     "release_manually": "手动恢复",
-    "language": "语言设置",
-    "view_title": "视图设置"
+    "language": "切换语言",
+    "view_title": "切换视图"
   },
   "header": {
     "title": "MySpeed",
     "running_tooltip": "正在测速",
     "start_tooltip": "开始测速",
-    "new_update": "有新版本可用",
-    "download": "下载",
-    "paused": "当前测试已暂停，点击继续测试。",
-    "running": "测速正在进行中，请稍候...",
+    "new_update": "发现新版本",
+    "download": "立即更新",
+    "paused": "测速已暂停，请先恢复后再进行测试。",
+    "running": "正在测速中，请稍候…",
     "admin_login": "管理员登录",
+    "servers": "服务器",
     "beta": {
-      "title": "测试版本",
-      "description": "该功能处于测试阶段。如发现问题，请<Link>在此报告</Link>。"
+      "title": "测试版",
+      "description": "此功能仍处于测试阶段，如遇问题请<Link>在此反馈</Link>。"
     }
   },
   "storage": {
     "speedtests": "测速记录",
     "configuration": "配置",
-    "stored_tests": "当前已存储的测速记录数",
-    "tests": "测试",
-    "export_tests": "导出测试记录",
-    "tests_exported": "测试记录已导出",
+    "stored_tests": "已保存的记录",
+    "tests": "条",
+    "export_tests": "导出测速记录",
+    "tests_exported": "测速记录已导出",
     "csv": "CSV",
     "json": "JSON",
-    "import_tests": "导入测试记录",
-    "tests_imported": "测试记录已导入",
-    "import_test_error": "导入测试记录时出错",
+    "import_tests": "导入测速记录",
+    "tests_imported": "测速记录已导入",
+    "import_test_error": "导入测速记录时出错",
     "import_config_error": "导入配置时出错",
     "export": "导出",
     "import": "导入",
-    "clear_history": "清空历史记录",
-    "history_cleared": "历史记录已清空",
+    "clear_history": "清空历史",
+    "history_cleared": "历史已清空",
     "delete": "删除",
     "confirm_delete": "确认删除",
     "export_settings": "导出配置",
@@ -157,109 +201,115 @@
   },
   "latest": {
     "ping": "延迟",
-    "ping_unit": "毫秒",
+    "ping_unit": "ms",
+    "jitter": "抖动",
+    "jitter_unit": "ms",
     "down": "下载",
     "speed_unit": "Mbps",
     "up": "上传",
-    "latest": "最近一次测速",
-    "before": "于"
+    "latest": "最近测速",
+    "before": "前"
   },
   "info": {
-    "credits": "<MSpeed>MySpeed</MSpeed>是由 GNMYT 开发的开源项目。欢迎在<Github>GitHub</Github>上提出建议或<Donate>捐赠</Donate>支持项目发展。",
-    "recommendations_error": "需要至少进行 10 次测速才能生成平均值。无论是手动还是自动测速都可以。",
-    "recommendations_info": "根据最近 10 次测速结果，最佳延迟为<Bold>{{ping}} 毫秒</Bold>，下载速度为<Bold>{{down}} Mbps</Bold>，上传速度为<Bold>{{up}} Mbps</Bold>。建议参考您的宽带合同，并根据实际情况调整这些值。",
-    "update": "版本 {{version}} 的更新已发布。查看<Changes>更新说明</Changes>和<DLLink>下载更新</DLLink>。",
+    "recommendations_error": "至少需要完成 10 次测速才能生成推荐值，手动或自动测速均可。",
+    "recommendations_info": "根据最近 10 次测速结果，最佳延迟为 <Bold>{{ping}} ms</Bold>，下载为 <Bold>{{down}} Mbps</Bold>，上传为 <Bold>{{up}} Mbps</Bold>。建议对照宽带签约速率，仅在数值吻合时采用。",
+    "update": "发现新版本 {{version}}，查看<Changes>更新日志</Changes>并<DLLink>下载更新</DLLink>。",
     "down": {
       "title": "下载速度",
-      "description": "下载速度直接影响您的上网体验。数值越高，表示您的设备接收数据的速度越快。"
+      "description": "下载速度决定了网页加载和文件下载的快慢，数值越大，从网络获取数据的速度越快。"
     },
     "ping": {
-      "title": "网络延迟",
-      "description": "网络延迟表示数据传输的响应时间。延迟越低越好，尤其对在线游戏和视频通话至关重要。"
+      "title": "延迟",
+      "description": "延迟反映数据包往返的响应时间，数值越低越好，对游戏和视频通话影响尤为明显。"
+    },
+    "jitter": {
+      "title": "抖动",
+      "description": "抖动是延迟的波动幅度，数值越低代表连接越稳定，对视频通话和在线游戏等实时场景影响较大。"
     },
     "up": {
       "title": "上传速度",
-      "description": "上传速度影响文件上传、视频会议等操作。数值越高，表示您的设备发送数据的速度越快。"
+      "description": "上传速度决定了文件上传和视频直播的效率，数值越大，向网络发送数据的速度越快。"
     },
     "latest": {
-      "title": "最近一次测速",
-      "description": "显示最近一次测速的时间信息。最后一次测速发生在<Bold>{{date}}</Bold> <Bold>{{time}}</Bold>。"
+      "title": "最近测速",
+      "description": "显示上次测速的时间。最近一次测速于 <Bold>{{date}}</Bold> <Bold>{{time}}</Bold> 完成。"
     }
   },
   "time": {
-    "now": "现在",
+    "now": "刚刚",
     "seconds": "{{seconds}} 秒",
-    "minute": "1分钟",
+    "minute": "1 分钟",
     "minutes": "{{minutes}} 分钟",
-    "hour": "1小时",
+    "hour": "1 小时",
     "hours": "{{hours}} 小时",
-    "on": "在",
-    "at": "于"
+    "on": "于",
+    "at": ""
   },
   "test": {
-    "not_available": "暂无测试记录",
-    "no_latest": "当前没有测试记录。请手动执行测试或等待自动测试完成。",
-    "loading_more": "加载更多测试记录...",
-    "no_more_tests": "已加载全部测试记录",
+    "not_available": "暂无测速记录",
+    "no_latest": "暂无测速记录，请手动执行一次或等待自动测速完成。",
+    "loading_more": "加载更多…",
+    "no_more_tests": "没有更多记录了",
     "unknown_error": "未知错误：",
-    "failed": "测试失败",
-    "recheck": "如频繁出现此问题，请检查网络连接。",
-    "delete": "删除测试",
-    "deleted": "测试记录已删除",
+    "failed": "测速失败",
+    "recheck": "如果频繁出现此情况，请检查网络连接。",
+    "delete": "删除此记录",
+    "deleted": "记录已删除",
     "average": {
       "title": "平均网速",
-      "description": "基于<Bold>{{amount}}</Bold>次测试结果，<Bold>{{date}}</Bold>的平均下载速度为<Bold>{{down}} Mbps</Bold>，上传速度为<Bold>{{up}} Mbps</Bold>。平均测试用时<Bold>{{duration}} 秒</Bold>。"
+      "description": "<Bold>{{date}}</Bold> 共 <Bold>{{amount}}</Bold> 次测速，平均下载 <Bold>{{down}} Mbps</Bold>，上传 <Bold>{{up}} Mbps</Bold>，平均耗时 <Bold>{{duration}} 秒</Bold>。"
     },
     "result": {
-      "title": "测试结果",
-      "description": "<Link>该测试</Link>的最高下载速度为<Bold>{{down}} Mbps</Bold>，最高上传速度为<Bold>{{up}} Mbps</Bold>。<Bold>{{type}}</Bold>测试耗时<Bold>{{duration}} 秒</Bold>。",
-      "from_you": "手动测试",
-      "automatic": "自动测试"
+      "title": "测速详情",
+      "description": "<Link>本次测速</Link>最高下载 <Bold>{{down}} Mbps</Bold>，最高上传 <Bold>{{up}} Mbps</Bold>，由<Bold>{{type}}</Bold>触发，耗时 <Bold>{{duration}} 秒</Bold>。",
+      "jitter": " 连接抖动为 <Bold>{{jitter}} ms</Bold>。",
+      "from_you": "手动",
+      "automatic": "自动"
     },
     "overview": {
-      "title": "最近{{amount}}的测试概览",
-      "1": "24小时",
-      "2": "2天",
-      "3": "7天",
-      "4": "30天"
+      "title_range": "{{from}} 至 {{to}} 测速概览"
     }
   },
   "errors": {
-    "network_unreachable": "测试期间网络连接不稳定。",
-    "took_too_long": "测试超时，已自动取消。",
-    "no_permission": "MySpeed无权限执行此测试。",
-    "resource_unavailable": "由于资源暂时不可用，测试无法进行。",
-    "no_route": "无法连接到测试服务器，请检查网络连接。",
-    "connection_refused": "连接被拒绝，测试无法进行。",
-    "timed_out": "测试超时，网络连接可能不稳定。",
+    "network_unreachable": "测试过程中网络连接不稳定",
+    "took_too_long": "测试超时，已自动取消",
+    "no_permission": "MySpeed 没有权限执行此测试",
+    "resource_unavailable": "测试资源暂时不可用",
+    "no_route": "无法连接到测速服务器，请检查网络",
+    "connection_refused": "连接被拒绝，测试无法执行",
+    "timed_out": "测试过程中网络连接不稳定",
     "config": "配置文件加载失败",
-    "invalid_view": "无效的视图设置"
+    "invalid_view": "无效的视图"
   },
   "statistics": {
+    "average": "均值",
+    "export": {
+      "button": "导出"
+    },
     "overview": {
       "total_title": "总测速次数",
       "total_description": "已执行的测速总数",
       "failed_title": "失败次数",
-      "failed_description": "测试失败的次数",
-      "average_title": "平均用时",
-      "average_description": "每次测速的平均耗时"
+      "failed_description": "测速失败的次数",
+      "average_title": "平均耗时",
+      "average_description": "每次测速的平均用时"
     },
     "failed": {
-      "title": "测试结果",
+      "title": "测速成败",
       "success": "成功",
       "failed": "失败",
-      "label": "测试"
+      "label": "测速"
     },
     "speed": {
-      "title": "网速统计"
+      "title": "网速"
     },
     "manual": {
-      "title": "测试来源",
-      "yes": "手动测试",
-      "no": "自动测试"
+      "title": "触发方式",
+      "yes": "手动触发",
+      "no": "自动触发"
     },
     "duration": {
-      "title": "测试时长",
+      "title": "测速耗时",
       "label": "次数"
     },
     "values": {
@@ -268,21 +318,52 @@
       "avg": "平均",
       "down": "下载速度",
       "up": "上传速度"
+    },
+    "failed_test": "失败记录",
+    "hourly": {
+      "title": "分时段网速",
+      "sample_count": "测速次数"
+    },
+    "consistency": {
+      "title": "连接稳定性",
+      "excellent": "优秀",
+      "good": "良好",
+      "fair": "一般",
+      "poor": "较差",
+      "ping_variance": "延迟波动"
     }
+  },
+  "calendar": {
+    "select_range": "选择日期范围",
+    "select_start": "选择起始日期",
+    "select_end": "选择结束日期",
+    "from": "从",
+    "to": "至",
+    "last_7_days": "最近 7 天",
+    "last_30_days": "最近 30 天",
+    "last_90_days": "最近 90 天",
+    "last_year": "最近一年",
+    "mon": "一",
+    "tue": "二",
+    "wed": "三",
+    "thu": "四",
+    "fri": "五",
+    "sat": "六",
+    "sun": "日"
   },
   "nodes": {
     "add": "添加服务器",
     "create": "添加",
-    "this_server": "本地服务器",
+    "this_server": "当前服务器",
     "created": "服务器添加成功",
-    "password_required": "该节点需要密码",
-    "update_password": "请更新该节点密码",
+    "password_required": "该节点需要密码验证",
+    "update_password": "请更新该节点的密码",
     "password_outdated": "密码已过期",
     "password_updated": "密码更新成功",
-    "preview_active": "演示模式下无法添加或删除服务器。",
+    "preview_active": "演示模式下无法添加或删除服务器",
     "placeholder": {
-      "name": "MySpeed实例名称",
-      "url": "https://您的服务器.cn"
+      "name": "MySpeed 实例名称",
+      "url": "https://your-server.com"
     },
     "group": {
       "name": "服务器名称",
@@ -290,43 +371,48 @@
     },
     "delete": {
       "title": "删除服务器",
-      "description": "服务器<Bold>{{name}}</Bold> (#{{id}}) 将被删除，此操作不可恢复。确定继续吗？",
-      "yes": "确定删除",
-      "success": "服务器已成功删除"
+      "description": "即将删除服务器 <Bold>{{name}}</Bold>（#{{id}}），此操作不可撤销，确定继续吗？",
+      "yes": "确认删除",
+      "success": "服务器已删除"
+    },
+    "rename": {
+      "title": "重命名服务器",
+      "placeholder": "新名称",
+      "success": "服务器已重命名"
     },
     "messages": {
-      "not_reachable": "服务器无法访问",
+      "not_reachable": "服务器无法连接",
       "password_changed": "密码已变更",
-      "tests_pending": "测试结果待更新"
+      "tests_pending": "测速结果同步中"
     }
   },
   "preview": {
     "title": "演示模式",
     "info": "演示",
-    "description": "当前处于演示模式，部分功能和设置受限。如需使用全部功能，请<Link>在您的服务器上安装 MySpeed</Link>。"
+    "description": "当前为演示模式，部分功能受限。如需使用全部功能，请<Link>在您的服务器上安装 MySpeed</Link>。"
   },
   "integrations": {
-    "none_active": "当前未启用集成。<br/><Bold>添加集成</Bold>",
-    "preview_active": "演示模式下，集成功能已禁用。",
+    "none_active": "该集成尚未启用。<br/><Bold>创建集成</Bold>",
+    "preview_active": "演示模式下集成功能不可用",
     "display_name": "集成名称",
-    "create": "添加",
+    "create": "创建",
     "activity": {
       "never_executed": "从未执行",
-      "last_run": "上次执行时间："
+      "last_run": "上次执行于 "
     },
     "discord": {
       "title": "Discord",
       "fields": {
-        "url": "Webhook链接",
+        "url": "Webhook 地址",
         "url_placeholder": "https://discord.com/api/webhooks/...",
         "display_name": "显示名称",
         "display_name_placeholder": "MySpeed 通知",
-        "error_message": "测试失败通知内容",
+        "error_message": "失败通知内容",
         "error_message_placeholder": "错误: %error%",
-        "send_failed": "发送测试失败通知",
-        "send_finished": "发送测试完成通知",
-        "finished_message": "测试完成通知内容",
-        "finished_message_placeholder": "延迟 %ping% ms, 下载 %download% Mbps, 上传 %upload% Mbps"
+        "send_failed": "发送失败通知",
+        "send_finished": "发送完成通知",
+        "finished_message": "完成通知内容",
+        "finished_message_placeholder": "%ping% ms, %download% Mbps, %upload% Mbps"
       }
     },
     "gotify": {
@@ -335,12 +421,12 @@
         "url": "服务器地址",
         "key": "应用令牌",
         "priority": "优先级",
-        "error_message": "测试失败通知内容",
+        "error_message": "失败通知内容",
         "error_message_placeholder": "错误: %error%",
-        "send_failed": "发送测试失败通知",
-        "send_finished": "发送测试完成通知",
-        "finished_message": "测试完成通知内容",
-        "finished_message_placeholder": "延迟 %ping% ms, 下载 %download% Mbps, 上传 %upload% Mbps"
+        "send_failed": "发送失败通知",
+        "send_finished": "发送完成通知",
+        "finished_message": "完成通知内容",
+        "finished_message_placeholder": "%ping% ms, %download% Mbps, %upload% Mbps"
       }
     },
     "pushover": {
@@ -348,49 +434,64 @@
       "fields": {
         "token": "应用令牌",
         "user_key": "用户密钥",
-        "error_message": "测试失败通知内容",
-        "error_message_placeholder": "错误： %error%",
-        "send_failed": "发送测试失败通知",
-        "send_finished": "发送测试完成通知",
-        "finished_message": "测试完成通知内容",
-        "finished_message_placeholder": "延迟 %ping% 毫秒，下载 %download% Mbps，上传 %upload% Mbps"
+        "error_message": "失败通知内容",
+        "error_message_placeholder": "错误: %error%",
+        "send_failed": "发送失败通知",
+        "send_finished": "发送完成通知",
+        "finished_message": "完成通知内容",
+        "finished_message_placeholder": "%ping% ms, %download% Mbps, %upload% Mbps"
       }
     },
     "healthChecks": {
       "title": "HealthChecks",
       "fields": {
-        "url": "健康检查链接",
+        "url": "HealthChecks 地址",
         "url_placeholder": "https://hc-ping.com/<uuid>"
       }
     },
     "telegram": {
       "title": "Telegram",
       "fields": {
-        "token": "机器人令牌",
-        "chat_id": "聊天ID",
-        "error_message": "测试失败通知内容",
+        "token": "Bot Token",
+        "chat_id": "Chat ID",
+        "error_message": "失败通知内容",
         "error_message_placeholder": "错误: %error%",
-        "send_failed": "发送测试失败通知",
-        "send_finished": "发送测试完成通知",
-        "finished_message": "测试完成通知内容",
-        "finished_message_placeholder": "延迟 %ping% ms, 下载 %download% Mbps, 上传 %upload% Mbps"
+        "send_failed": "发送失败通知",
+        "send_finished": "发送完成通知",
+        "finished_message": "完成通知内容",
+        "finished_message_placeholder": "%ping% ms, %download% Mbps, %upload% Mbps"
       }
     },
     "webhook": {
-      "title": "自定义Webhook",
+      "title": "Webhook",
       "fields": {
-        "url": "Webhook地址",
-        "url_placeholder": "https://您的服务器.com/hook",
-        "send_started": "发送测试开始通知",
-        "send_failed": "发送测试失败通知",
-        "send_finished": "发送测试完成通知",
-        "send_alive": "发送存活状态通知",
-        "send_recommendations": "发送推荐值通知",
-        "send_config_updates": "发送配置更新通知"
+        "url": "Webhook 地址",
+        "url_placeholder": "https://your-server.com/hook",
+        "send_started": "发送开始通知",
+        "send_failed": "发送失败通知",
+        "send_finished": "发送完成通知",
+        "send_alive": "发送心跳通知",
+        "send_recommendations": "发送推荐值变更通知",
+        "send_config_updates": "发送配置变更通知"
       }
     }
   },
   "common": {
     "back_to_top": "回到顶部"
+  },
+  "not_found": {
+    "title": "页面未找到",
+    "description": "您访问的页面不存在或已被移除。",
+    "back_home": "返回首页"
+  },
+  "route_error": {
+    "title": "出错了！",
+    "subtitle": "页面加载异常",
+    "description": "发生了意外错误，请重试或返回首页。",
+    "reload": "重新加载"
+  },
+  "optimal_values": {
+    "title": "目标网速",
+    "use_recommended": "使用推荐值"
   }
 }

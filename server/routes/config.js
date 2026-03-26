@@ -8,7 +8,7 @@ const app = express.Router();
 app.get("/", password(true), async (req, res) => {
     let configValues = {};
     (await config.listAll()).forEach(row => {
-        if (row.key !== "password" && !(req.viewMode && ["ooklaId", "libreId", "libreUrl", "cron", "scheduleOffset", "passwordLevel"].includes(row.key)))
+        if (row.key !== "password" && !(req.viewMode && ["ooklaId", "libreId", "libreUrl", "guizhouUrl", "cron", "scheduleOffset", "passwordLevel"].includes(row.key)))
             configValues[row.key] = row.value;
     });
     configValues['viewMode'] = req.viewMode;
